@@ -12,8 +12,8 @@ module.exports = {
         comm: ["Commissioner", "sans-serif"],
       },
       backgroundImage: {
-        heroMobile: 'url("/images/image-hero-mobile.jpg")',
-        heroDesktop: 'url("/images/image-hero-desktop.jpg")',
+        heroMobile: 'url("image-hero-mobile.jpg")',
+        heroDesktop: 'url("image-hero-desktop.jpg")',
       },
       backgroundSize: {
         half: "50vh",

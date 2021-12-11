@@ -437,46 +437,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 18rem;
 }
 
-.h-auto{
-  height: auto;
-}
-
-.h-3{
-  height: 0.75rem;
-}
-
-.w-96{
-  width: 24rem;
-}
-
-.w-full{
-  width: 100%;
-}
-
-.min-w-min{
-  min-width: -webkit-min-content;
-  min-width: -moz-min-content;
-  min-width: min-content;
-}
-
-.min-w-max{
-  min-width: -webkit-max-content;
-  min-width: -moz-max-content;
-  min-width: max-content;
-}
-
-.max-w-sm{
-  max-width: 24rem;
-}
-
-.max-w-2xl{
-  max-width: 42rem;
-}
-
-.max-w-xl{
-  max-width: 36rem;
-}
-
 .items-center{
   align-items: center;
 }
@@ -486,15 +446,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .bg-heroMobile{
-  background-image: url("/images/image-hero-mobile.jpg");
+  background-image: url("image-hero-mobile.jpg");
 }
 
 .bg-cover{
   background-size: cover;
-}
-
-.bg-contain{
-  background-size: contain;
 }
 
 .bg-no-repeat{
@@ -514,18 +470,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 1rem;
 }
 
-.pr-3{
-  padding-right: 0.75rem;
-}
-
-.pr-1{
-  padding-right: 0.25rem;
-}
-
-.pr-2{
-  padding-right: 0.5rem;
-}
-
 .font-comm{
   font-family: Commissioner, sans-serif;
 }
@@ -536,52 +480,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 @media (min-width: 640px){
-  .sm\:m-3{
-    margin: 0.75rem;
-  }
-
-  .sm\:mx-3{
-    margin-left: 0.75rem;
-    margin-right: 0.75rem;
-  }
-
-  .sm\:mx-6{
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-  }
-
-  .sm\:ml-6{
-    margin-left: 1.5rem;
-  }
-
-  .sm\:mr-6{
-    margin-right: 1.5rem;
-  }
-
-  .sm\:mr-12{
-    margin-right: 3rem;
-  }
-
-  .sm\:ml-12{
-    margin-left: 3rem;
-  }
-
-  .sm\:ml-16{
-    margin-left: 4rem;
-  }
-
-  .sm\:ml-1{
-    margin-left: 0.25rem;
-  }
-
-  .sm\:ml-2{
-    margin-left: 0.5rem;
-  }
-
-  .sm\:ml-20{
-    margin-left: 5rem;
-  }
-
   .sm\:ml-14{
     margin-left: 3.5rem;
   }
@@ -594,74 +492,16 @@ Ensure the default browser behavior of the `hidden` attribute.
     display: none;
   }
 
-  .sm\:w-32{
-    width: 8rem;
-  }
-
-  .sm\:w-52{
-    width: 13rem;
-  }
-
-  .sm\:w-8{
-    width: 2rem;
-  }
-
-  .sm\:w-80{
-    width: 20rem;
-  }
-
-  .sm\:w-1\/4{
-    width: 25%;
-  }
-
-  .sm\:w-2\/5{
-    width: 40%;
-  }
-
-  .sm\:w-full{
-    width: 100%;
-  }
-
   .sm\:justify-between{
     justify-content: space-between;
   }
 
   .sm\:bg-heroDesktop{
-    background-image: url("/images/image-hero-desktop.jpg");
-  }
-
-  .sm\:bg-contain{
-    background-size: contain;
-  }
-
-  .sm\:px-32{
-    padding-left: 8rem;
-    padding-right: 8rem;
-  }
-
-  .sm\:px-3{
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-  }
-
-  .sm\:px-36{
-    padding-left: 9rem;
-    padding-right: 9rem;
-  }
-
-  .sm\:px-28{
-    padding-left: 7rem;
-    padding-right: 7rem;
+    background-image: url("image-hero-desktop.jpg");
   }
 
   .sm\:px-24{
     padding-left: 6rem;
     padding-right: 6rem;
-  }
-}
-
-@media (min-width: 768px){
-  .md\:bg-heroDesktop{
-    background-image: url("/images/image-hero-desktop.jpg");
   }
 }
