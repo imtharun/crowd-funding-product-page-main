@@ -14,79 +14,300 @@
     <script defer src="script.js"></script>
   </head>
   <body class="font-comm">
+    <!-- Header -->
     <header
-      class="header bg-heroMobile bg-cover  bg-no-repeat h-72 sm:bg-heroDesktop "
+      class="
+        header
+        bg-heroMobile bg-cover bg-no-repeat
+        h-72
+        desk:bg-heroDesktop
+      "
     >
-      <nav class="nav flex items-center justify-between p-6 sm:px-24 py-10">
+      <!-- Nav -->
+      <nav class="nav flex items-center justify-between p-6 desk:px-24 py-10">
         <div>
           <img src="logo.svg" alt="Crowd fund" />
         </div>
         <div class="text-md text-white">
-          <ul class="hidden sm:flex sm:ml-14 sm:justify-between">
-            <li class="pr-4">About</li>
-            <li class="pr-4">Discover</li>
-            <li class="pr-4">Get Started</li>
+          <ul class="hidden desk:flex desk:ml-14 desk:justify-between">
+            <li class="p-4"><a class="hover:underline" href="#">About</a></li>
+            <li class="p-4">
+              <a class="hover:underline" href="#">Discover</a>
+            </li>
+            <li class="p-4">
+              <a class="hover:underline" href="#">Get Started</a>
+            </li>
           </ul>
-          <img
-            class="sm:hidden"
-            src="icon-hamburger.svg"
-            alt="Menu"
-          />
+          <button class="hamburgerMenu">
+            <img class="desk:hidden" src="icon-hamburger.svg" alt="Menu" />
+          </button>
         </div>
       </nav>
     </header>
-    <main>
-      <section class="cnt__1"></section>
+    <!-- Main -->
+    <main class="flex flex-col justify-center items-center">
+      <!-- Section 1 -->
+      <section
+        class="
+          cnt__1
+          w-5/6
+          min-w-320
+          -mt-8
+          bg-white
+          border-1
+          mb-6
+          shadow-gray-600
+          p-4
+          rounded-md
+          border-gray-200
+          desk:w-600
+        "
+      >
+        <div class="relative">
+          <div class="absolute left-[40%] desk:left-[45%] -top-14">
+            <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+              <g fill="none" fill-rule="evenodd">
+                <circle fill="#000" cx="28" cy="28" r="28" />
+                <g fill-rule="nonzero">
+                  <path
+                    d="M15.565 28.565a1.93 1.93 0 012.606-.113l.122.113 10.142 10.142a1.93 1.93 0 01-2.606 2.84l-.122-.112-10.142-10.142a1.93 1.93 0 010-2.728z"
+                    fill="#444"
+                  />
+                  <path
+                    d="M36.19 17.48c1.006-.996 2.706-.34 2.805 1.026l.005.126v10.736c0 .9-.737 1.629-1.646 1.629a1.64 1.64 0 01-1.642-1.507l-.005-.122v-6.805l-8.043 7.957c-1.006.996-2.707.34-2.806-1.026l-.004-.126v-6.805L16.81 30.52a1.66 1.66 0 01-2.224.095l-.105-.095a1.616 1.616 0 01-.096-2.2l.096-.103L25.336 17.48c1.006-.996 2.707-.34 2.806 1.026l.004.126v6.804l8.043-7.956z"
+                    fill="#FFF"
+                  />
+                </g>
+              </g>
+            </svg>
+          </div>
+          <h1 class="text-center text-xl font-extrabold py-2">
+            Mastercraft Bamboo Monitor Riser
+          </h1>
+          <p class="text-sm text-center text-darkGray">
+            A beautiful & handcrafted monitor stand to reduce neck and eye
+            strain.
+          </p>
+        </div>
+        <div>
+          <div
+            class="flex items-center justify-center mt-4 desk:justify-between"
+          >
+            <div class="p-4">
+              <button
+                class="
+                  bg-moderateCyan
+                  hover:bg-darkCyan
+                  py-4
+                  px-8
+                  rounded-full
+                  text-white
+                  font-bold
+                  text-md
+                "
+                href="#"
+              >
+                Back this project
+              </button>
+            </div>
+            <button class="bookmark">
+              <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none" fill-rule="evenodd">
+                  <circle fill="#2F2F2F" cx="28" cy="28" r="28" />
+                  <path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z" />
+                </g>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- Section 2 -->
+      <section
+        class="
+          mb-6
+          text-center
+          border-1
+          p-4
+          rounded-md
+          shadow-gray-600
+          w-5/6
+          min-w-320
+          desk:w-600
+        "
+      >
+        <div class="desk:flex desk:p-4">
+          <div class="my-4 mr-4 desk:px-12 desk:border-r-2">
+            <div class="font-bold text-3xl">$89,914</div>
+            <p class="text-sm p-1 text-darkGray">of $100,100 backed</p>
+          </div>
+          <div class="w-full flex justify-center desk:hidden">
+            <div
+              class="w-24 h-2 border-b-2 desk:border-r-2 desk:border-b-0"
+            ></div>
+          </div>
+          <div class="my-4 mr-4 desk:px-12 desk:border-r-2">
+            <div class="font-bold text-3xl">5,007</div>
+            <p class="text-sm p-1 text-darkGray">total backers</p>
+          </div>
+          <div class="w-full flex justify-center desk:hidden">
+            <div
+              class="
+                w-24
+                h-2
+                border-b-2
+                desk:w-4 desk:border-r-2 desk:border-b-0
+              "
+            ></div>
+          </div>
+          <div class="my-4 desk:pr-8">
+            <div class="font-bold text-3xl">50</div>
+            <p class="text-sm text-darkGray">days left</p>
+          </div>
+        </div>
+        <div class="border-2 rounded-md mb-4 desk:mx-8">
+          <div class="max-w-full w-1/3 rounded-md bg-moderateCyan h-2"></div>
+        </div>
+      </section>
+      <!-- Section 3 -->
+      <section
+        class="
+          mb-6
+          border-1
+          p-4
+          rounded-md
+          shadow-gray-600
+          w-5/6
+          min-w-320
+          desk:w-600
+        "
+      >
+        <h1 class="font-bold text-xl m-3">About this project</h1>
+        <div class="text-darkGray m-3">
+          <p class="py-2">
+            The Mastercraft Bamboo Monitor Riser is a sturdy and stylish
+            platform that elevates your screen to a more comfortable viewing
+            height. Placing your monitor at eye level has the potential to
+            improve your posture and make you more comfortable while at work,
+            helping you stay focused on the task at hand.
+          </p>
+          <p class="py-2">
+            Featuring artisan craftsmanship, the simplicity of design creates
+            extra desk space below your computer to allow notepads, pens, and
+            USB sticks to be stored under the stand.
+          </p>
+        </div>
+        <!-- Subsection 1 -->
+        <section class="m-3 border-1 p-4 rounded-md shadow-gray-600">
+          <div class="m-2">
+            <div class="mb-5 desk:flex desk:justify-between">
+              <h1 class="text-xl font-bold py-2">Bamboo Stand</h1>
+              <h2 class="text-moderateCyan font-medium text-sm desk:py-2">
+                Pledge $25 or more
+              </h2>
+            </div>
+            <p class="text-darkGray">
+              You get an ergonomic stand made of natural bamboo. You've helped
+              us launch our promotional campaign, and you’ll be added to a
+              special Backer member list.
+            </p>
+          </div>
+          <div class="text-3xl ml-3 my-4 font-bold">
+            101 <span class="text-darkGray text-sm font-normal">left</span>
+          </div>
+          <div class="p-4">
+            <button
+              class="
+                bg-moderateCyan
+                py-4
+                px-8
+                rounded-full
+                text-white
+                font-bold
+                text-md
+                hover:bg-darkCyan
+              "
+              href="#"
+            >
+              Select reward
+            </button>
+          </div>
+        </section>
+        <!-- Subsection 2 -->
+        <section class="m-3 border-1 p-4 rounded-md shadow-gray-600">
+          <div class="m-2">
+            <div class="mb-5 desk:flex desk:justify-between">
+              <h1 class="text-xl font-bold py-2">Black Edition Stand</h1>
+              <h2 class="text-moderateCyan font-medium text-sm desk:py-2">
+                Pledge $75 or more
+              </h2>
+            </div>
+            <p class="text-darkGray">
+              You get a Black Special Edition computer stand and a personal
+              thank you. You’ll be added to our Backer member list. Shipping is
+              included.
+            </p>
+          </div>
+          <div class="text-3xl ml-3 my-4 font-bold">
+            64 <span class="text-darkGray text-sm font-normal">left</span>
+          </div>
+          <div class="p-4">
+            <button
+              class="
+                bg-moderateCyan
+                py-4
+                px-8
+                rounded-full
+                text-white
+                font-bold
+                text-md
+                hover:bg-darkCyan
+              "
+              href="#"
+            >
+              Select reward
+            </button>
+          </div>
+        </section>
+        <!-- Subsection 3 -->
+        <section class="m-3 border-1 p-4 rounded-md shadow-gray-600 opacity-50">
+          <div class="m-2">
+            <div class="mb-5 desk:flex desk:justify-between">
+              <h1 class="text-xl font-bold py-2">Mahogany Special Edition</h1>
+              <h2 class="text-moderateCyan font-medium text-sm desk:py-2">
+                Pledge $200 or more
+              </h2>
+            </div>
+            <p class="text-darkGray">
+              You get a Black Special Edition computer stand and a personal
+              thank you. You’ll be added to our Backer member list. Shipping is
+              included.
+            </p>
+          </div>
+          <div class="text-3xl ml-3 my-4 font-bold">
+            0 <span class="text-darkGray text-sm font-normal">left</span>
+          </div>
+          <div class="p-4">
+            <button
+              class="
+                bg-darkGray
+                py-4
+                px-8
+                rounded-full
+                text-white
+                font-bold
+                text-md
+              "
+              href="#"
+              disabled
+            >
+              Out of stock
+            </button>
+          </div>
+        </section>
+      </section>
     </main>
   </body>
 </html>
-
-<!-- 
-  About
-  Discover
-  Get Started
-
-  Mastercraft Bamboo Monitor Riser
-  A beautiful & handcrafted monitor stand to reduce neck and eye strain.
-
-  Back this project
-  Bookmark
-
-  $89,914 of $100,000 backed
-  5,007 total backers
-  56 days left
-
-  About this project
-
-  The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform that elevates your screen 
-  to a more comfortable viewing height. Placing your monitor at eye level has the potential to improve 
-  your posture and make you more comfortable while at work, helping you stay focused on the task at hand.
-
-  Featuring artisan craftsmanship, the simplicity of design creates extra desk space below your computer 
-  to allow notepads, pens, and USB sticks to be stored under the stand.
-  
-  Bamboo Stand
-  Pledge $25 or more
-  You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and 
-  you’ll be added to a special Backer member list.
-  101 left
-  Select Reward
-
-  Black Edition Stand
-  Pledge $75 or more
-  You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer 
-  member list. Shipping is included.
-  64 left
-  Select Reward
-
-  Mahogany Special Edition
-  Pledge $200 or more
-  You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added 
-  to our Backer member list. Shipping is included.
-  0 left
-  Out of Stock
-
--->
 
 <!-- Selection modal start -->
 
