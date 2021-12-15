@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
   </head>
-  <body class="font-comm">
+  <body class="relative font-comm">
     <!-- Header -->
     <header
       class="
@@ -25,7 +25,7 @@
     >
       <!-- Nav -->
       <nav class="nav flex items-center justify-between p-6 desk:px-24 py-10">
-        <div>
+        <div class="-mt-5">
           <img src="logo.svg" alt="Crowd fund" />
         </div>
         <div class="text-md text-white">
@@ -39,7 +39,16 @@
             </li>
           </ul>
           <button class="hamburgerMenu">
-            <img class="desk:hidden" src="icon-hamburger.svg" alt="Menu" />
+            <svg
+              class="desk:hidden"
+              width="16"
+              height="15"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g fill="#FFF" fill-rule="evenodd">
+                <path d="M0 0h16v3H0zM0 6h16v3H0zM0 12h16v3H0z" />
+              </g>
+            </svg>
           </button>
         </div>
       </nav>
@@ -306,6 +315,74 @@
         </section>
       </section>
     </main>
+    <!-- Thanks modal -->
+    <div
+      class="
+        overlay
+        hidden
+        backdrop-blur-sm
+        absolute
+        top-0
+        left-0
+        w-full
+        h-full
+        z-10
+      "
+    ></div>
+    <section
+      class="
+        hidden
+        thankyouModal
+        fixed
+        z-20
+        shadow-2xl
+        left-1/2
+        top-1/2
+        -translate-x-1/2 -translate-y-1/2
+        bg-white
+        rounded-md
+        w-408
+        border-1
+        p-4
+      "
+    >
+      <div class="flex justify-center p-4">
+        <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none" fill-rule="evenodd">
+            <circle fill="#3CB3AB" cx="32" cy="32" r="32" />
+            <path
+              stroke="#FFF"
+              stroke-width="5"
+              d="M20 31.86L28.093 40 44 24"
+            />
+          </g>
+        </svg>
+      </div>
+      <div class="text-center m-3 py-2">
+        <h1 class="text-md text-xl font-bold my-2">Thanks for your support</h1>
+        <p class="text-darkGray my-2">
+          Your pledge brings us one step closer to sharing Mastercraft Bamboo
+          Monitor Riser worldwide. You will get an email once our campaign is
+          completed.
+        </p>
+      </div>
+      <div class="flex justify-center my-2">
+        <button
+          class="
+            bg-moderateCyan
+            py-3
+            px-8
+            rounded-full
+            text-white
+            font-bold
+            text-md
+            hover:bg-darkCyan
+          "
+        >
+          Got it
+        </button>
+      </div>
+    </section>
   </body>
 </html>
 
