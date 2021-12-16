@@ -33,6 +33,7 @@ module.exports = {
         moderateCyan: "hsl(176, 50%, 47%)",
         darkGray: "hsl(0, 0%, 48%)",
         black: "hsl(0, 0%, 0%)",
+        grayBookmark: "#B1B1B1",
       },
       fontFamily: {
         comm: ["Commissioner", "sans-serif"],
