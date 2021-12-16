@@ -25,6 +25,9 @@ module.exports = {
         600: "37.5rem",
         700: "43.75rem",
       },
+      height: {
+        80: "80vh",
+      },
       screens: {
         desk: "700px",
       },
