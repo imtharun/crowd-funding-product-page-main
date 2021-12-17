@@ -117,6 +117,7 @@
             <div class="p-4">
               <button
                 class="
+                  backThisProject
                   bg-moderateCyan
                   hover:bg-darkCyan
                   py-4
@@ -455,17 +456,18 @@
         >
       </div>
     </section>
+    <!-- Section -->
     <section
       class="
-        popModal
         hidden
+        popModal
         p-8
         bg-white
         fixed
         left-1/2
         top-28
         h-80
-        -translate-x-1/2 -translate-y-1/2bg-white
+        -translate-x-1/2
         w-5/6
         overflow-y-scroll
         border-none
@@ -478,7 +480,7 @@
     >
       <div class="flex justify-between">
         <h1 class="text-xl font-bold my-4">Back this project</h1>
-        <button>
+        <button class="selectedModal__close">
           <svg width="15" height="15" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M11.314 0l2.828 2.828L9.9 7.071l4.243 4.243-2.828 2.828L7.07 9.9l-4.243 4.243L0 11.314 4.242 7.07 0 2.828 2.828 0l4.243 4.242L11.314 0z"
@@ -495,10 +497,11 @@
           the world?
         </p>
       </div>
-      <section class="my-3 border-1 rounded-md shadow-gray-600">
+      <!-- First subsection -->
+      <section class="sec__1 my-3 border-1 rounded-md shadow-gray-600">
         <div class="p-8">
           <label
-            for="radioBtn"
+            for="radioBtn1"
             class="
               inline-flex
               items-center
@@ -509,14 +512,14 @@
             "
           >
             <input
-              class="hidden checked:scale-100 radio__input"
+              class="hidden checked:scale-100 radio__input__1"
               type="radio"
               name="Radio"
-              id="radioBtn"
+              id="radioBtn1"
             />
             <div
               class="
-                custom__radio
+                custom__radio__1
                 w-6
                 h-6
                 border-2 border-gray-300
@@ -544,31 +547,352 @@
         </div>
         <div
           class="
+            sec__1__cnt
             border-t-1
             p-4
+            transition-transform
+            duration-1000
+            close__1
             desk:flex desk:justify-between desk:items-center
           "
         >
           <label class="block text-center text-darkGray" for="cnt__1"
             >Enter your pledge</label
           >
-          <div class="relative flex">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6 absolute top-7 left-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="gray"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
+          <div class="relative flex justify-center">
             <input
-              class="w-28 h-14 px-10 py-6 my-2 rounded-full border-1 desk:mx-2"
+              class="
+                relative
+                w-28
+                h-14
+                px-6
+                py-6
+                my-2
+                rounded-full
+                border-1
+                desk:mx-2
+              "
+              type="text"
+              id="cnt__1"
+            />
+            <button
+              class="
+                bg-moderateCyan
+                mx-2
+                my-2
+                px-6
+                text-white
+                font-bold
+                rounded-full
+                text-md
+                hover:bg-darkCyan
+              "
+              href="#"
+              type="submit"
+            >
+              Continue
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Second subsection -->
+      <section class="sec__2 my-3 border-1 rounded-md shadow-gray-600">
+        <div class="p-8">
+          <label
+            for="radioBtn2"
+            class="
+              inline-flex
+              items-center
+              cursor-pointer
+              mr-3
+              font-bold
+              text-xl
+            "
+          >
+            <input
+              class="hidden checked:scale-100 radio__input__2"
+              type="radio"
+              name="Radio"
+              id="radioBtn2"
+            />
+            <div
+              class="
+                custom__radio__2
+                w-6
+                h-6
+                border-2 border-gray-300
+                rounded-xl
+                mr-3
+                p-0.5
+                box-border
+                after:scale-0
+                after:w-full
+                after:h-full
+                after:block
+                after:bg-moderateCyan
+                after:rounded-lg
+                after:transition-transform
+                after:duration-75
+              "
+            ></div>
+            <div class="desk:flex desk:items-center">
+              <h1 class="">Bamboo stand</h1>
+              <p class="text-sm font-semibold text-darkCyan desk:ml-4">
+                Pledge $25 or more
+              </p>
+            </div>
+          </label>
+          <p class="block text-darkGray pt-5">
+            You get an ergonomic stand made of natural bamboo. You've helped us
+            launch our promotional campaign, and you’ll be added to a special
+            Backer member list.
+          </p>
+        </div>
+        <div class="text-2xl ml-3 -mt-6 mb-4 font-bold px-8">
+          101 <span class="text-darkGray text-sm font-normal">left</span>
+        </div>
+        <div></div>
+        <div
+          class="
+            sec__2__cnt
+            border-t-1
+            p-4
+            transition-transform
+            duration-1000
+            close__2
+            desk:flex desk:justify-between desk:items-center
+          "
+        >
+          <label class="block text-center text-darkGray" for="cnt__2"
+            >Enter your pledge</label
+          >
+          <div class="relative flex justify-center">
+            <input
+              class="
+                relative
+                w-28
+                h-14
+                px-6
+                py-6
+                my-2
+                rounded-full
+                border-1
+                desk:mx-2
+              "
+              type="text"
+            />
+            <button
+              class="
+                bg-moderateCyan
+                mx-2
+                my-2
+                px-6
+                text-white
+                font-bold
+                rounded-full
+                text-md
+                hover:bg-darkCyan
+              "
+              href="#"
+            >
+              Continue
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- Third subsection -->
+      <section class="sec__3 my-3 border-1 rounded-md shadow-gray-600">
+        <div class="p-8">
+          <label
+            for="radioBtn3"
+            class="
+              inline-flex
+              items-center
+              cursor-pointer
+              mr-3
+              font-bold
+              text-xl
+            "
+          >
+            <input
+              class="hidden checked:scale-100 radio__input__3"
+              type="radio"
+              name="Radio"
+              id="radioBtn3"
+            />
+            <div
+              class="
+                custom__radio__3
+                w-6
+                h-6
+                border-2 border-gray-300
+                rounded-xl
+                mr-3
+                p-0.5
+                box-border
+                after:scale-0
+                after:w-full
+                after:h-full
+                after:block
+                after:bg-moderateCyan
+                after:rounded-lg
+                after:transition-transform
+                after:duration-75
+              "
+            ></div>
+            <div class="desk:flex desk:items-center">
+              <h1 class="">Black Edition Stand</h1>
+              <p class="text-sm font-semibold text-darkCyan desk:ml-4">
+                Pledge $75 or more
+              </p>
+            </div>
+          </label>
+          <p class="block text-darkGray pt-5">
+            You get a Black Special Edition computer stand and a personal thank
+            you. You’ll be added to our Backer member list. Shipping is
+            included.
+          </p>
+        </div>
+        <div class="text-2xl ml-3 -mt-6 mb-4 font-bold px-8">
+          64 <span class="text-darkGray text-sm font-normal">left</span>
+        </div>
+        <div></div>
+        <div
+          class="
+            sec__3__cnt
+            border-t-1
+            p-4
+            transition-transform
+            duration-1000
+            close__3
+            desk:flex desk:justify-between desk:items-center
+          "
+        >
+          <label class="block text-center text-darkGray" for="cnt__3"
+            >Enter your pledge</label
+          >
+          <div class="relative flex justify-center">
+            <input
+              class="
+                relative
+                w-28
+                h-14
+                px-6
+                py-6
+                my-2
+                rounded-full
+                border-1
+                desk:mx-2
+              "
+              type="text"
+            />
+            <button
+              class="
+                bg-moderateCyan
+                mx-2
+                my-2
+                px-6
+                text-white
+                font-bold
+                rounded-full
+                text-md
+                hover:bg-darkCyan
+              "
+              href="#"
+            >
+              Continue
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- Fourth subsection -->
+      <section
+        class="sec__4 my-3 border-1 rounded-md shadow-gray-600 opacity-50"
+      >
+        <div class="p-8">
+          <label
+            for="radioBtn4"
+            class="
+              inline-flex
+              items-center
+              cursor-default
+              mr-3
+              font-bold
+              text-xl
+            "
+          >
+            <input
+              class="hidden checked:scale-100 radio__input__4"
+              type="radio"
+              name="Radio"
+              id="radioBtn4"
+              disabled
+            />
+            <div
+              class="
+                custom__radio__4
+                w-6
+                h-6
+                border-2 border-gray-300
+                rounded-xl
+                mr-3
+                p-0.5
+                box-border
+                after:scale-0
+                after:w-full
+                after:h-full
+                after:block
+                after:bg-moderateCyan
+                after:rounded-lg
+                after:transition-transform
+                after:duration-75
+              "
+            ></div>
+            <div class="desk:flex desk:items-center">
+              <h1 class="">Mahogany Special Edition</h1>
+              <p class="text-sm font-semibold text-darkCyan desk:ml-4">
+                Pledge $200 or more
+              </p>
+            </div>
+          </label>
+          <p class="block text-darkGray pt-5">
+            You get two Special Edition Mahogany stands, a Backer T-Shirt, and a
+            personal thank you. You’ll be added to our Backer member list.
+            Shipping is included.
+          </p>
+        </div>
+        <div class="text-2xl ml-3 -mt-6 mb-4 font-bold px-8">
+          0 <span class="text-darkGray text-sm font-normal">left</span>
+        </div>
+        <div></div>
+        <div
+          class="
+            sec__4__cnt
+            border-t-1
+            p-4
+            transition-transform
+            duration-1000
+            close__4
+            desk:flex desk:justify-between desk:items-center
+          "
+        >
+          <label class="block text-center text-darkGray" for="cnt__4"
+            >Enter your pledge</label
+          >
+          <div class="relative flex justify-center">
+            <input
+              class="
+                relative
+                w-28
+                h-14
+                px-6
+                py-6
+                my-2
+                rounded-full
+                border-1
+                desk:mx-2
+              "
               type="text"
             />
             <button
@@ -593,39 +917,3 @@
     </section>
   </body>
 </html>
-
-<!-- Selection modal start -->
-
-<!--    Bamboo Stand Pledge $25 or more You get an
-  ergonomic stand made of natural bamboo. You've helped us launch our promotional
-  campaign, and you’ll be added to a special Backer member list. 101 left -->
-
-<!-- Selected pledge start -->
-<!-- Enter your pledge $25 Continue -->
-<!-- Selected pledge end -->
-
-<!-- Black Edition Stand Pledge $75 or more You get a Black Special Edition computer
-  stand and a personal thank you. You’ll be added to our Backer member list.
-  Shipping is included. 64 left -->
-
-<!-- Selected pledge start -->
-<!-- Enter your pledge $75 Continue -->
-<!-- Selected pledge end -->
-
-<!-- Mahogany Special Edition Pledge $200 or more You get two Special Edition
-  Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to
-  our Backer member list. Shipping is included. 0 left -->
-
-<!-- Selected pledge  start -->
-<!-- Enter your pledge $200 Continue -->
-<!-- Selected pledge end -->
-
-<!-- Selection modal end -->
-
-<!-- Success modal start -->
-
-<!-- Thanks for your support! Your pledge brings us one step closer to sharing
-  Mastercraft Bamboo Monitor Riser worldwide. You will get an email once our
-  campaign is completed. Got it! -->
-
-<!-- Success modal end -->

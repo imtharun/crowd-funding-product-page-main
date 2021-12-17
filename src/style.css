@@ -4,10 +4,45 @@
 @tailwind components;
 @tailwind utilities;
 
-.radio__input:checked + .custom__radio::after {
+.radio__input__1:checked + .custom__radio__1::after,
+.radio__input__2:checked + .custom__radio__2::after,
+.radio__input__3:checked + .custom__radio__3::after,
+.radio__input__4:checked + .custom__radio__4::after {
   transform: scale(1);
 }
 
 .popModal::-webkit-scrollbar {
   display: none;
+}
+
+.close__1 {
+  transform: translateY(-30rem);
+  opacity: 0;
+  height: 0;
+  margin-bottom: 0;
+  padding: 0 2.25rem;
+}
+
+.close__2 {
+  transform: translateY(-20rem);
+  opacity: 0;
+  height: 0;
+  margin-bottom: 0;
+  padding: 0 2.25rem;
+}
+
+.close__3 {
+  transform: translateY(-40rem);
+  opacity: 0;
+  height: 0;
+  margin-bottom: 0;
+  padding: 0 2.25rem;
+}
+
+.close__4 {
+  transform: translateY(-50rem);
+  opacity: 0;
+  height: 0;
+  margin-bottom: 0;
+  padding: 0 2.25rem;
 }

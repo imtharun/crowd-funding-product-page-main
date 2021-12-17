@@ -16,6 +16,10 @@ module.exports = {
       8: "8px",
     },
     extend: {
+      transitionProperty: {
+        height: "height",
+        spacing: "margin, padding",
+      },
       inset: {
         "40%": "40%",
         "45%": "45%",
