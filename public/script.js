@@ -8,6 +8,8 @@ const hamCross = document.querySelector(".hamCross");
 const backThisProject = document.querySelector(".backThisProject");
 
 const overlay = document.querySelector(".overlay");
+
+const thankBtn = document.querySelector(".thankBtn");
 const thankyouModal = document.querySelector(".thankyouModal");
 
 const bookmark = document.querySelector(".bookmark");
@@ -33,6 +35,31 @@ const radioInputThree = document.querySelector(".radio__input__3");
 const secFour = document.querySelector(".sec__4");
 const secFourCnt = document.querySelector(".sec__4__cnt");
 const radioInputFour = document.querySelector(".radio__input__4");
+
+const bambooSelect = document.querySelector(".bambooSelect");
+const blackSelect = document.querySelector(".blackSelect");
+
+const noRewardPledge = document.querySelector(".noRewardPledge");
+const noRewardPledgeBtn = document.querySelector(".noRewardPledgeBtn");
+
+const blackStand = document.querySelector(".blackStand");
+const blackStandBtn = document.querySelector(".blackStandBtn");
+
+const bambooStand = document.querySelector(".bambooStand");
+const bambooStandBtn = document.querySelector(".bambooStandBtn");
+
+const totalBacked = document.querySelector(".totalBacked");
+const totalBackers = document.querySelector(".totalBackers");
+const progressBar = document.querySelector(".progressBar");
+
+const totalBamboos = document.querySelectorAll(".totalBamboos");
+const totalBlacks = document.querySelectorAll(".totalBlacks");
+
+const secsOne = document.querySelectorAll(".sec_1");
+const secsTwo = document.querySelectorAll(".sec_2");
+const secsThree = document.querySelectorAll(".sec_3");
+
+let backers, backed;
 
 bookmark.addEventListener("click", function () {
   if (bookmark.dataset.active === "0") {
@@ -97,4 +124,151 @@ backThisProject.addEventListener("click", function () {
 
 selectedModalClose.addEventListener("click", function () {
   selectedModal.classList.add("hidden");
+});
+
+bambooSelect.addEventListener("click", function () {
+  selectedModal.classList.remove("hidden");
+  secTwo.scrollIntoView({ behavior: "smooth" });
+  secTwoCnt.classList.remove("close__2");
+  secTwo.classList.add("border-moderateCyan");
+});
+
+blackSelect.addEventListener("click", function () {
+  selectedModal.classList.remove("hidden");
+  secThree.scrollIntoView({ behavior: "smooth" });
+  secThreeCnt.classList.remove("close__3");
+  secThree.classList.add("border-moderateCyan");
+});
+
+noRewardPledgeBtn.addEventListener("click", () => {
+  backers = Number.parseInt(totalBackers.textContent.replace(",", "")) + 1;
+  backed = Number.parseInt(totalBacked.textContent.slice(1).replace(",", ""));
+  const current = Number.parseInt(noRewardPledge.value);
+  backed += current;
+  selectedModal.classList.add("hidden");
+  thankyouModal.classList.remove("hidden");
+});
+
+bambooStandBtn.addEventListener("click", () => {
+  backers = Number.parseInt(totalBackers.textContent.replace(",", "")) + 1;
+  backed = Number.parseInt(totalBacked.textContent.slice(1).replace(",", ""));
+  if(bambooStand.value === "") return;
+  const current = Number.parseInt(bambooStand.value);
+  backed += current;
+
+  if (Number.parseInt(totalBamboos[0].textContent) === 1) {
+    console.log("inside bamboo container", secsTwo);
+    secsTwo.forEach((ele, i) => {
+      ele.classList.add("opacity-50");
+      if (i > 0) {
+        ele.querySelector(`.sec_2_btn`).classList.add("bg-DaryGray");
+        ele.querySelector(`.sec_2_btn`).classList.remove("bg-moderateCyan");
+      }
+      ele.querySelector(`.sec_2_btn`).classList.add("cursor-default");
+      ele.querySelector(`.sec_2_btn`).classList.add("bg-darkGray");
+      ele.querySelector(`.sec_2_btn`).classList.remove("hover:bg-darkCyan");
+      ele.querySelector(`.sec_2_btn`).setAttribute("disabled", "1");
+    });
+    totalBamboos.forEach((ele) => {
+      ele.innerHTML =
+        0 + `<span class="text-darkGray text-sm pl-2 font-normal">left</span>`;
+    });
+    selectedModal.classList.add("hidden");
+    thankyouModal.classList.remove("hidden");
+    return;
+  }
+  console.log("outside bmb container");
+  totalBamboos.forEach((ele) => {
+    ele.innerHTML =
+      Number.parseInt(ele.textContent) -
+      1 +
+      `<span class="text-darkGray text-sm pl-2 font-normal">left</span>`;
+  });
+  selectedModal.classList.add("hidden");
+  thankyouModal.classList.remove("hidden");
+});
+
+blackStandBtn.addEventListener("click", () => {
+  backers = Number.parseInt(totalBackers.textContent.replace(",", "")) + 1;
+  backed = Number.parseInt(totalBacked.textContent.slice(1).replace(",", ""));
+  if(blackStand.value === "") return;
+  const current = Number.parseInt(blackStand.value);
+  backed += current;
+  if (Number.parseInt(totalBlacks[0].textContent) === 1) {
+    secsThree.forEach((ele, i) => {
+      ele.classList.add("opacity-50");
+      if (i > 0) {
+        ele.querySelector(`.sec_3_btn`).classList.add("bg-DaryGray");
+        ele.querySelector(`.sec_3_btn`).classList.remove("bg-moderateCyan");
+      }
+      ele.querySelector(`.sec_3_btn`).classList.add("cursor-default");
+      ele.querySelector(`.sec_3_btn`).classList.add("bg-darkGray");
+      ele.querySelector(`.sec_3_btn`).classList.remove("hover:bg-darkCyan");
+      ele.querySelector(`.sec_3_btn`).setAttribute("disabled", "1");
+    });
+    totalBlacks.forEach((ele) => {
+      ele.innerHTML =
+        0 + `<span class="text-darkGray text-sm pl-2 font-normal">left</span>`;
+    });
+    selectedModal.classList.add("hidden");
+    thankyouModal.classList.remove("hidden");
+    return;
+  }
+  console.log("outside bmb container");
+  totalBlacks.forEach((ele) => {
+    ele.innerHTML =
+      Number.parseInt(ele.textContent) -
+      1 +
+      `<span class="text-darkGray text-sm pl-2 font-normal">left</span>`;
+  });
+
+  selectedModal.classList.add("hidden");
+  thankyouModal.classList.remove("hidden");
+});
+
+thankBtn.addEventListener("click", () => {
+  totalBackers.textContent = backers
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  thankyouModal.classList.add("remove");
+  totalBacked.textContent =
+    "$" + backed.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  const num = Number.parseInt(
+    totalBacked.textContent.slice(1).replace(",", "")
+  );
+  let percent = (num / 100100) * 100;
+  console.log(percent);
+  if (percent < 100) {
+    console.log("less than 100");
+    progressBar.classList.remove("w-[39.9%]");
+    progressBar.style.width = `${percent}%`;
+  } else {
+    console.log("greater than 100");
+    progressBar.classList.remove("w-[39.9%]");
+    progressBar.style.width = `100%`;
+  }
+
+  if (!secOneCnt.classList.contains("close__1")) {
+    secOneCnt.classList.add("close__1");
+    secOne.classList.remove("border-moderateCyan");
+  }
+  if (!secTwoCnt.classList.contains("close__2")) {
+    bambooStand.value = "";
+    secTwoCnt.classList.add("close__2");
+    secTwo.classList.remove("border-moderateCyan");
+  }
+
+  if (!secThreeCnt.classList.contains("close__3")) {
+    blackStand.value = "";
+    secThreeCnt.classList.add("close__3");
+    secThree.classList.remove("border-moderateCyan");
+  }
+
+  if (!secFourCnt.classList.contains("close__4")) {
+    secFourCnt.classList.add("close__4");
+    secFour.classList.remove("border-moderateCyan");
+  }
+
+  thankyouModal.classList.add("hidden");
+  noRewardPledge.value = "";
 });

@@ -188,7 +188,7 @@
       >
         <div class="desk:flex desk:p-4">
           <div class="my-4 mr-4 desk:px-12 desk:border-r-2">
-            <div class="font-bold text-3xl">$89,914</div>
+            <div class="totalBacked font-bold text-3xl">$39,914</div>
             <p class="text-sm p-1 text-darkGray">of $100,100 backed</p>
           </div>
           <div class="w-full flex justify-center desk:hidden">
@@ -197,7 +197,7 @@
             ></div>
           </div>
           <div class="my-4 mr-4 desk:px-12 desk:border-r-2">
-            <div class="font-bold text-3xl">5,007</div>
+            <div class="totalBackers font-bold text-3xl">5,007</div>
             <p class="text-sm p-1 text-darkGray">total backers</p>
           </div>
           <div class="w-full flex justify-center desk:hidden">
@@ -216,7 +216,16 @@
           </div>
         </div>
         <div class="border-2 rounded-md mb-4 desk:mx-8">
-          <div class="max-w-full w-1/3 rounded-md bg-moderateCyan h-2"></div>
+          <div
+            class="
+              progressBar
+              max-w-full
+              w-[39.9%]
+              rounded-full
+              bg-moderateCyan
+              h-3
+            "
+          ></div>
         </div>
       </section>
       <!-- Section 3 -->
@@ -248,7 +257,7 @@
           </p>
         </div>
         <!-- Subsection 1 -->
-        <section class="m-3 border-1 p-4 rounded-md shadow-gray-600">
+        <section class="sec_2 m-3 border-1 p-4 rounded-md shadow-gray-600">
           <div class="m-2">
             <div class="mb-5 desk:flex desk:justify-between">
               <h1 class="text-xl font-bold py-2">Bamboo Stand</h1>
@@ -262,12 +271,14 @@
               special Backer member list.
             </p>
           </div>
-          <div class="text-3xl ml-3 my-4 font-bold">
+          <div class="totalBamboos text-3xl ml-3 my-4 font-bold">
             101 <span class="text-darkGray text-sm font-normal">left</span>
           </div>
           <div class="p-4">
             <button
               class="
+                bambooSelect
+                sec_2_btn
                 bg-moderateCyan
                 py-4
                 px-8
@@ -284,7 +295,7 @@
           </div>
         </section>
         <!-- Subsection 2 -->
-        <section class="m-3 border-1 p-4 rounded-md shadow-gray-600">
+        <section class="sec_3 m-3 border-1 p-4 rounded-md shadow-gray-600">
           <div class="m-2">
             <div class="mb-5 desk:flex desk:justify-between">
               <h1 class="text-xl font-bold py-2">Black Edition Stand</h1>
@@ -298,12 +309,14 @@
               included.
             </p>
           </div>
-          <div class="text-3xl ml-3 my-4 font-bold">
+          <div class="totalBlacks text-3xl ml-3 my-4 font-bold">
             64 <span class="text-darkGray text-sm font-normal">left</span>
           </div>
           <div class="p-4">
             <button
               class="
+                sec_3_btn
+                blackSelect
                 bg-moderateCyan
                 py-4
                 px-8
@@ -320,7 +333,9 @@
           </div>
         </section>
         <!-- Subsection 3 -->
-        <section class="m-3 border-1 p-4 rounded-md shadow-gray-600 opacity-50">
+        <section
+          class="sec_4 m-3 border-1 p-4 rounded-md shadow-gray-600 opacity-50"
+        >
           <div class="m-2">
             <div class="mb-5 desk:flex desk:justify-between">
               <h1 class="text-xl font-bold py-2">Mahogany Special Edition</h1>
@@ -340,6 +355,7 @@
           <div class="p-4">
             <button
               class="
+                sec_4_btn
                 bg-darkGray
                 py-4
                 px-8
@@ -411,6 +427,7 @@
       <div class="flex justify-center my-2">
         <button
           class="
+            thankBtn
             bg-moderateCyan
             py-3
             px-8
@@ -483,6 +500,7 @@
         <button class="selectedModal__close">
           <svg width="15" height="15" xmlns="http://www.w3.org/2000/svg">
             <path
+              class="backClose"
               d="M11.314 0l2.828 2.828L9.9 7.071l4.243 4.243-2.828 2.828L7.07 9.9l-4.243 4.243L0 11.314 4.242 7.07 0 2.828 2.828 0l4.243 4.242L11.314 0z"
               fill="#000"
               fill-rule="evenodd"
@@ -498,7 +516,7 @@
         </p>
       </div>
       <!-- First subsection -->
-      <section class="sec__1 my-3 border-1 rounded-md shadow-gray-600">
+      <section class="sec__1 sec_1 my-3 border-1 rounded-md shadow-gray-600">
         <div class="p-8">
           <label
             for="radioBtn1"
@@ -534,7 +552,7 @@
                 after:bg-moderateCyan
                 after:rounded-lg
                 after:transition-transform
-                after:duration-75
+                after:duration-1000
               "
             ></div>
             Pledge with no reward
@@ -562,6 +580,7 @@
           <div class="relative flex justify-center">
             <input
               class="
+                noRewardPledge
                 relative
                 w-28
                 h-14
@@ -572,11 +591,14 @@
                 border-1
                 desk:mx-2
               "
+              value=""
               type="text"
               id="cnt__1"
             />
             <button
               class="
+                sec_1_btn
+                noRewardPledgeBtn
                 bg-moderateCyan
                 mx-2
                 my-2
@@ -597,7 +619,7 @@
       </section>
 
       <!-- Second subsection -->
-      <section class="sec__2 my-3 border-1 rounded-md shadow-gray-600">
+      <section class="sec__2 sec_2 my-3 border-1 rounded-md shadow-gray-600">
         <div class="p-8">
           <label
             for="radioBtn2"
@@ -649,7 +671,7 @@
             Backer member list.
           </p>
         </div>
-        <div class="text-2xl ml-3 -mt-6 mb-4 font-bold px-8">
+        <div class="totalBamboos text-2xl ml-3 -mt-6 mb-4 font-bold px-8">
           101 <span class="text-darkGray text-sm font-normal">left</span>
         </div>
         <div></div>
@@ -670,6 +692,7 @@
           <div class="relative flex justify-center">
             <input
               class="
+                bambooStand
                 relative
                 w-28
                 h-14
@@ -680,10 +703,13 @@
                 border-1
                 desk:mx-2
               "
+              value=""
               type="text"
             />
             <button
               class="
+                sec_2_btn
+                bambooStandBtn
                 bg-moderateCyan
                 mx-2
                 my-2
@@ -702,7 +728,7 @@
         </div>
       </section>
       <!-- Third subsection -->
-      <section class="sec__3 my-3 border-1 rounded-md shadow-gray-600">
+      <section class="sec__3 sec_3 my-3 border-1 rounded-md shadow-gray-600">
         <div class="p-8">
           <label
             for="radioBtn3"
@@ -754,7 +780,7 @@
             included.
           </p>
         </div>
-        <div class="text-2xl ml-3 -mt-6 mb-4 font-bold px-8">
+        <div class="totalBlacks text-2xl ml-3 -mt-6 mb-4 font-bold px-8">
           64 <span class="text-darkGray text-sm font-normal">left</span>
         </div>
         <div></div>
@@ -775,6 +801,7 @@
           <div class="relative flex justify-center">
             <input
               class="
+                blackStand
                 relative
                 w-28
                 h-14
@@ -789,6 +816,8 @@
             />
             <button
               class="
+                sec_3_btn
+                blackStandBtn
                 bg-moderateCyan
                 mx-2
                 my-2
