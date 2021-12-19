@@ -59,6 +59,13 @@ const secsOne = document.querySelectorAll(".sec_1");
 const secsTwo = document.querySelectorAll(".sec_2");
 const secsThree = document.querySelectorAll(".sec_3");
 
+const errorTwo = document.querySelector(".sec__2__error");
+const errorThree = document.querySelector(".sec__3__error");
+
+const labelOne = document.querySelector(".sec__1__label");
+const labelTwo = document.querySelector(".sec__2__label");
+const labelThree = document.querySelector(".sec__3__label");
+
 let backers, backed;
 
 bookmark.addEventListener("click", function () {
@@ -80,7 +87,6 @@ bookmark.addEventListener("click", function () {
 });
 
 menu.addEventListener("click", function () {
-  console.log("clicked");
   if (menu.dataset.active === "0") {
     hamSticks.classList.add("hidden");
     hamCross.classList.remove("hidden");
@@ -95,19 +101,16 @@ menu.addEventListener("click", function () {
 });
 
 radioInputOne.addEventListener("click", function () {
-  console.log("Clicked radion input 1");
   secOneCnt.classList.remove("close__1");
   secOne.classList.add("border-moderateCyan");
 });
 
 radioInputTwo.addEventListener("click", function () {
-  console.log("Clicked radion input 2");
   secTwoCnt.classList.remove("close__2");
   secTwo.classList.add("border-moderateCyan");
 });
 
 radioInputThree.addEventListener("click", function () {
-  console.log("Clicked radion input 3");
   secThreeCnt.classList.remove("close__3");
   secThree.classList.add("border-moderateCyan");
 });
@@ -120,16 +123,73 @@ radioInputThree.addEventListener("click", function () {
 
 backThisProject.addEventListener("click", function () {
   selectedModal.classList.remove("hidden");
+  labelOne.querySelector("input").checked = false;
+  labelTwo.querySelector("input").checked = false;
+  labelThree.querySelector("input").checked = false;
 });
 
 selectedModalClose.addEventListener("click", function () {
   selectedModal.classList.add("hidden");
+  if (!secOneCnt.classList.contains("close__1")) {
+    secOneCnt.classList.add("close__1");
+    secOne.classList.remove("border-moderateCyan");
+  }
+  if (!secTwoCnt.classList.contains("close__2")) {
+    bambooStand.value = "";
+    secTwoCnt.classList.add("close__2");
+    secTwo.classList.remove("border-moderateCyan");
+  }
+
+  if (!secThreeCnt.classList.contains("close__3")) {
+    blackStand.value = "";
+    secThreeCnt.classList.add("close__3");
+    secThree.classList.remove("border-moderateCyan");
+  }
+
+  if (!secFourCnt.classList.contains("close__4")) {
+    secFourCnt.classList.add("close__4");
+    secFour.classList.remove("border-moderateCyan");
+  }
+});
+
+labelOne.addEventListener("click", () => {
+  if (labelTwo.querySelector("input").checked === false) {
+    secTwo.classList.remove("border-moderateCyan");
+    secTwoCnt.classList.add("close__2");
+  }
+  if (labelThree.querySelector("input").checked === false) {
+    secThree.classList.remove("border-moderateCyan");
+    secThreeCnt.classList.add("close__3");
+  }
+});
+
+labelTwo.addEventListener("click", () => {
+  if (labelOne.querySelector("input").checked === false) {
+    secOne.classList.remove("border-moderateCyan");
+    secOneCnt.classList.add("close__1");
+  }
+  if (labelThree.querySelector("input").checked === false) {
+    secThree.classList.remove("border-moderateCyan");
+    secThreeCnt.classList.add("close__3");
+  }
+});
+
+labelThree.addEventListener("click", () => {
+  if (labelOne.querySelector("input").checked === false) {
+    secOne.classList.remove("border-moderateCyan");
+    secOneCnt.classList.add("close__1");
+  }
+  if (labelTwo.querySelector("input").checked === false) {
+    secTwo.classList.remove("border-moderateCyan");
+    secTwoCnt.classList.add("close__2");
+  }
 });
 
 bambooSelect.addEventListener("click", function () {
   selectedModal.classList.remove("hidden");
   secTwo.scrollIntoView({ behavior: "smooth" });
   secTwoCnt.classList.remove("close__2");
+  radioInputTwo.checked = true;
   secTwo.classList.add("border-moderateCyan");
 });
 
@@ -137,6 +197,7 @@ blackSelect.addEventListener("click", function () {
   selectedModal.classList.remove("hidden");
   secThree.scrollIntoView({ behavior: "smooth" });
   secThreeCnt.classList.remove("close__3");
+  radioInputThree.checked = true;
   secThree.classList.add("border-moderateCyan");
 });
 
@@ -152,12 +213,22 @@ noRewardPledgeBtn.addEventListener("click", () => {
 bambooStandBtn.addEventListener("click", () => {
   backers = Number.parseInt(totalBackers.textContent.replace(",", "")) + 1;
   backed = Number.parseInt(totalBacked.textContent.slice(1).replace(",", ""));
-  if(bambooStand.value === "") return;
+  if (Number.parseInt(bambooStand.value) < 25 || bambooStand.value === "") {
+    errorTwo.classList.remove("hidden");
+    bambooStand.classList.add("focus:outline-none");
+    bambooStand.classList.add("focus:border-red-500");
+    bambooStand.classList.add("border-red-500");
+    return;
+  } else {
+    errorTwo.classList.add("hidden");
+    bambooStand.classList.remove("border-red-500");
+    bambooStand.classList.remove("focus:outline-none");
+    bambooStand.classList.remove("focus:border-red-500");
+  }
   const current = Number.parseInt(bambooStand.value);
   backed += current;
 
   if (Number.parseInt(totalBamboos[0].textContent) === 1) {
-    console.log("inside bamboo container", secsTwo);
     secsTwo.forEach((ele, i) => {
       ele.classList.add("opacity-50");
       if (i > 0) {
@@ -191,7 +262,18 @@ bambooStandBtn.addEventListener("click", () => {
 blackStandBtn.addEventListener("click", () => {
   backers = Number.parseInt(totalBackers.textContent.replace(",", "")) + 1;
   backed = Number.parseInt(totalBacked.textContent.slice(1).replace(",", ""));
-  if(blackStand.value === "") return;
+  if (Number.parseInt(blackStand.value) < 75 || blackStand.value === "") {
+    errorThree.classList.remove("hidden");
+    blackStand.classList.add("focus:outline-none");
+    blackStand.classList.add("focus:border-red-500");
+    blackStand.classList.add("border-red-500");
+    return;
+  } else {
+    blackStand.classList.remove("border-red-500");
+    errorThree.classList.add("hidden");
+    blackStand.classList.remove("focus:outline-none");
+    blackStand.classList.remove("focus:border-red-500");
+  }
   const current = Number.parseInt(blackStand.value);
   backed += current;
   if (Number.parseInt(totalBlacks[0].textContent) === 1) {
@@ -214,7 +296,6 @@ blackStandBtn.addEventListener("click", () => {
     thankyouModal.classList.remove("hidden");
     return;
   }
-  console.log("outside bmb container");
   totalBlacks.forEach((ele) => {
     ele.innerHTML =
       Number.parseInt(ele.textContent) -
@@ -234,16 +315,13 @@ thankBtn.addEventListener("click", () => {
   totalBacked.textContent =
     "$" + backed.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   const num = Number.parseInt(
-    totalBacked.textContent.slice(1).replace(",", "")
+    totalBacked.textContent.slice(1).replaceAll(",", "")
   );
-  let percent = (num / 100100) * 100;
-  console.log(percent);
+  let percent = (num * 100) / 100100;
   if (percent < 100) {
-    console.log("less than 100");
     progressBar.classList.remove("w-[39.9%]");
     progressBar.style.width = `${percent}%`;
   } else {
-    console.log("greater than 100");
     progressBar.classList.remove("w-[39.9%]");
     progressBar.style.width = `100%`;
   }

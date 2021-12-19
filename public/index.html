@@ -521,6 +521,7 @@
           <label
             for="radioBtn1"
             class="
+              sec__1__label
               inline-flex
               items-center
               cursor-pointer
@@ -594,6 +595,7 @@
               value=""
               type="text"
               id="cnt__1"
+              placeholder="$ 0.00"
             />
             <button
               class="
@@ -624,6 +626,7 @@
           <label
             for="radioBtn2"
             class="
+              sec__2__label
               inline-flex
               items-center
               cursor-pointer
@@ -677,6 +680,7 @@
         <div></div>
         <div
           class="
+            relative
             sec__2__cnt
             border-t-1
             p-4
@@ -689,7 +693,20 @@
           <label class="block text-center text-darkGray" for="cnt__2"
             >Enter your pledge</label
           >
-          <div class="relative flex justify-center">
+          <div class="flex justify-center">
+            <small
+              class="
+                absolute
+                text-center
+                hidden
+                text-red-500
+                left-4
+                top-26
+                desk:top-16
+                sec__2__error
+              "
+              >Please enter valid Pledge</small
+            >
             <input
               class="
                 bambooStand
@@ -705,6 +722,7 @@
               "
               value=""
               type="text"
+              placeholder="$ 0.00"
             />
             <button
               class="
@@ -733,6 +751,7 @@
           <label
             for="radioBtn3"
             class="
+              sec__3__label
               inline-flex
               items-center
               cursor-pointer
@@ -786,6 +805,7 @@
         <div></div>
         <div
           class="
+            relative
             sec__3__cnt
             border-t-1
             p-4
@@ -798,7 +818,7 @@
           <label class="block text-center text-darkGray" for="cnt__3"
             >Enter your pledge</label
           >
-          <div class="relative flex justify-center">
+          <div class="flex justify-center">
             <input
               class="
                 blackStand
@@ -812,8 +832,22 @@
                 border-1
                 desk:mx-2
               "
+              value=""
               type="text"
+              placeholder="$ 0.00"
             />
+            <small
+              class="
+                absolute
+                hidden
+                text-red-500
+                left-4
+                top-26
+                desk:top-16
+                sec__3__error
+              "
+              >Please enter valid Pledge</small
+            >
             <button
               class="
                 sec_3_btn
