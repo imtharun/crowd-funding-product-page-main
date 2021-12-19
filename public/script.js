@@ -137,11 +137,17 @@ selectedModalClose.addEventListener("click", function () {
   if (!secTwoCnt.classList.contains("close__2")) {
     bambooStand.value = "";
     secTwoCnt.classList.add("close__2");
+    errorTwo.classList.add("hidden");
+    bambooStand.classList.remove("focus:border-red-500");
+    bambooStand.classList.remove("border-red-500");
     secTwo.classList.remove("border-moderateCyan");
   }
 
   if (!secThreeCnt.classList.contains("close__3")) {
     blackStand.value = "";
+    errorThree.classList.add("hidden");
+    blackStand.classList.remove("focus:border-red-500");
+    blackStand.classList.remove("border-red-500");
     secThreeCnt.classList.add("close__3");
     secThree.classList.remove("border-moderateCyan");
   }
@@ -156,9 +162,17 @@ labelOne.addEventListener("click", () => {
   if (labelTwo.querySelector("input").checked === false) {
     secTwo.classList.remove("border-moderateCyan");
     secTwoCnt.classList.add("close__2");
+    errorTwo.classList.add("hidden");
+    bambooStand.value = "";
+    bambooStand.classList.remove("focus:border-red-500");
+    bambooStand.classList.remove("border-red-500");
   }
   if (labelThree.querySelector("input").checked === false) {
     secThree.classList.remove("border-moderateCyan");
+    errorThree.classList.add("hidden");
+    blackStand.value = "";
+    blackStand.classList.remove("focus:border-red-500");
+    blackStand.classList.remove("border-red-500");
     secThreeCnt.classList.add("close__3");
   }
 });
@@ -167,10 +181,15 @@ labelTwo.addEventListener("click", () => {
   if (labelOne.querySelector("input").checked === false) {
     secOne.classList.remove("border-moderateCyan");
     secOneCnt.classList.add("close__1");
+    noRewardPledge.value = "";
   }
   if (labelThree.querySelector("input").checked === false) {
     secThree.classList.remove("border-moderateCyan");
     secThreeCnt.classList.add("close__3");
+    blackStand.value = "";
+    errorThree.classList.add("hidden");
+    blackStand.classList.remove("focus:border-red-500");
+    blackStand.classList.remove("border-red-500");
   }
 });
 
@@ -178,15 +197,21 @@ labelThree.addEventListener("click", () => {
   if (labelOne.querySelector("input").checked === false) {
     secOne.classList.remove("border-moderateCyan");
     secOneCnt.classList.add("close__1");
+    noRewardPledge.value = "";
   }
   if (labelTwo.querySelector("input").checked === false) {
     secTwo.classList.remove("border-moderateCyan");
     secTwoCnt.classList.add("close__2");
+    errorTwo.classList.add("hidden");
+    bambooStand.value = "";
+    bambooStand.classList.remove("focus:border-red-500");
+    bambooStand.classList.remove("border-red-500");
   }
 });
 
 bambooSelect.addEventListener("click", function () {
   selectedModal.classList.remove("hidden");
+  bambooStand.classList.remove("focus:border-red-500");
   secTwo.scrollIntoView({ behavior: "smooth" });
   secTwoCnt.classList.remove("close__2");
   radioInputTwo.checked = true;
@@ -213,7 +238,12 @@ noRewardPledgeBtn.addEventListener("click", () => {
 bambooStandBtn.addEventListener("click", () => {
   backers = Number.parseInt(totalBackers.textContent.replace(",", "")) + 1;
   backed = Number.parseInt(totalBacked.textContent.slice(1).replace(",", ""));
-  if (Number.parseInt(bambooStand.value) < 25 || bambooStand.value === "") {
+  if (
+    Number.parseInt(bambooStand.value) < 25 ||
+    bambooStand.value === "" ||
+    bambooStand.value.match(/^[a-zA-Z]+$/i)
+  ) {
+    console.log("inside bamboo stand");
     errorTwo.classList.remove("hidden");
     bambooStand.classList.add("focus:outline-none");
     bambooStand.classList.add("focus:border-red-500");
@@ -262,7 +292,11 @@ bambooStandBtn.addEventListener("click", () => {
 blackStandBtn.addEventListener("click", () => {
   backers = Number.parseInt(totalBackers.textContent.replace(",", "")) + 1;
   backed = Number.parseInt(totalBacked.textContent.slice(1).replace(",", ""));
-  if (Number.parseInt(blackStand.value) < 75 || blackStand.value === "") {
+  if (
+    Number.parseInt(blackStand.value) < 75 ||
+    blackStand.value === "" ||
+    blackStand.value.match(/^[a-zA-Z]+$/i)
+  ) {
     errorThree.classList.remove("hidden");
     blackStand.classList.add("focus:outline-none");
     blackStand.classList.add("focus:border-red-500");

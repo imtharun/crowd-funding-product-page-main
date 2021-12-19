@@ -1028,7 +1028,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .close__1 {
-  transform: translateY(-30rem);
+  transform: translateY(-100rem);
   opacity: 0;
   height: 0;
   margin-bottom: 0;
@@ -1036,7 +1036,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .close__2 {
-  transform: translateY(-20rem);
+  transform: translateY(-100rem);
   opacity: 0;
   height: 0;
   margin-bottom: 0;
@@ -1044,7 +1044,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .close__3 {
-  transform: translateY(-40rem);
+  transform: translateY(-100rem);
   opacity: 0;
   height: 0;
   margin-bottom: 0;
@@ -1052,7 +1052,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .close__4 {
-  transform: translateY(-50rem);
+  transform: translateY(-100rem);
   opacity: 0;
   height: 0;
   margin-bottom: 0;
