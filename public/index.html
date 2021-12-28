@@ -566,6 +566,7 @@
         </div>
         <div
           class="
+            relative
             sec__1__cnt
             border-t-1
             p-4
@@ -578,7 +579,19 @@
           <label class="block text-center text-darkGray" for="cnt__1"
             >Enter your pledge</label
           >
-          <div class="relative flex justify-center">
+          <div class="flex justify-center">
+            <small
+              class="
+                absolute
+                hidden
+                text-red-500
+                left-4
+                top-26
+                desk:top-16
+                sec__1__error
+              "
+              >Please enter valid Pledge</small
+            >
             <input
               class="
                 noRewardPledge

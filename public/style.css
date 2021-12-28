@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap");
 
 /*
-! tailwindcss v3.0.0 | MIT License | https://tailwindcss.com
+! tailwindcss v3.0.7 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -425,7 +425,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
 
-.-translate-x-1\/2, .-translate-y-1\/2, .after\:scale-0::after, .checked\:scale-100{
+*, ::before, ::after{
   --tw-translate-x: 0;
   --tw-translate-y: 0;
   --tw-rotate: 0;
@@ -434,21 +434,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-scale-x: 1;
   --tw-scale-y: 1;
   --tw-transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.border-1, .border-2, .border-b-2, .border-t-1, .desk\:border-r-2, .desk\:border-b-0{
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
-}
-
-.shadow-2xl, .shadow-xl{
   --tw-ring-offset-shadow: 0 0 #0000;
   --tw-ring-shadow: 0 0 #0000;
   --tw-shadow: 0 0 #0000;
   --tw-shadow-colored: 0 0 #0000;
-}
-
-.backdrop-blur-sm{
   --tw-backdrop-blur: var(--tw-empty,/*!*/ /*!*/);
   --tw-backdrop-brightness: var(--tw-empty,/*!*/ /*!*/);
   --tw-backdrop-contrast: var(--tw-empty,/*!*/ /*!*/);
@@ -551,6 +542,22 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .top-26{
   top: 6.5rem;
+}
+
+.left-2{
+  left: 0.5rem;
+}
+
+.right-2{
+  right: 0.5rem;
+}
+
+.-left-1{
+  left: -0.25rem;
+}
+
+.-left-12{
+  left: -3rem;
 }
 
 .z-10{
@@ -964,14 +971,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: hsl(176 50% 47% / var(--tw-text-opacity));
 }
 
-.text-darkCyan{
-  --tw-text-opacity: 1;
-  color: hsl(176 72% 28% / var(--tw-text-opacity));
-}
-
 .text-red-500{
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+
+.text-darkCyan{
+  --tw-text-opacity: 1;
+  color: hsl(176 72% 28% / var(--tw-text-opacity));
 }
 
 .opacity-50{
@@ -1121,7 +1128,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .hover\:underline:hover{
-  text-decoration: underline;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
 }
 
 .focus\:border-red-500:focus{

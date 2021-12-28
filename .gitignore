@@ -3,5 +3,6 @@
 *.xd
 .DS_Store
 .prettierignore
+.vscode
 README-template.md
 style-guide.md

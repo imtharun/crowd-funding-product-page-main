@@ -60,6 +60,7 @@ const secsTwo = document.querySelectorAll(".sec_2");
 const secsThree = document.querySelectorAll(".sec_3");
 
 const errorTwo = document.querySelector(".sec__2__error");
+const errorOne = document.querySelector(".sec__1__error");
 const errorThree = document.querySelector(".sec__3__error");
 
 const labelOne = document.querySelector(".sec__1__label");
@@ -131,7 +132,12 @@ backThisProject.addEventListener("click", function () {
 selectedModalClose.addEventListener("click", function () {
   selectedModal.classList.add("hidden");
   if (!secOneCnt.classList.contains("close__1")) {
+    noRewardPledge.value = "";
     secOneCnt.classList.add("close__1");
+    errorOne.classList.add("hidden");
+    noRewardPledge.classList.remove("focus:border-red-500");
+    noRewardPledge.classList.remove("border-red-500");
+    // errorOne.classList.add("hidden");
     secOne.classList.remove("border-moderateCyan");
   }
   if (!secTwoCnt.classList.contains("close__2")) {
@@ -231,8 +237,23 @@ noRewardPledgeBtn.addEventListener("click", () => {
   backed = Number.parseInt(totalBacked.textContent.slice(1).replace(",", ""));
   const current = Number.parseInt(noRewardPledge.value);
   backed += current;
-  selectedModal.classList.add("hidden");
-  thankyouModal.classList.remove("hidden");
+  if (
+    noRewardPledge.value === "" ||
+    !Number.isInteger(Number.parseInt(noRewardPledge.value))
+    // noRewardPledge.value.match(/^[a-z0-9]+$/i)
+  ) {
+    noRewardPledge.classList.add("focus:outline-none");
+    errorOne.classList.remove("hidden");
+    noRewardPledge.classList.add("focus:border-red-500");
+    noRewardPledge.classList.add("border-red-500");
+    return;
+  } else {
+    noRewardPledge.classList.remove("focus:border-red-500");
+    noRewardPledge.classList.remove("border-red-500");
+    selectedModal.classList.add("hidden");
+    errorOne.classList.add("hidden");
+    thankyouModal.classList.remove("hidden");
+  }
 });
 
 bambooStandBtn.addEventListener("click", () => {
@@ -241,7 +262,7 @@ bambooStandBtn.addEventListener("click", () => {
   if (
     Number.parseInt(bambooStand.value) < 25 ||
     bambooStand.value === "" ||
-    bambooStand.value.match(/^[a-zA-Z]+$/i)
+    !Number.isInteger(Number.parseInt(bambooStand.value))
   ) {
     console.log("inside bamboo stand");
     errorTwo.classList.remove("hidden");
@@ -295,7 +316,7 @@ blackStandBtn.addEventListener("click", () => {
   if (
     Number.parseInt(blackStand.value) < 75 ||
     blackStand.value === "" ||
-    blackStand.value.match(/^[a-zA-Z]+$/i)
+    !Number.isInteger(Number.parseInt(blackStand.value))
   ) {
     errorThree.classList.remove("hidden");
     blackStand.classList.add("focus:outline-none");
